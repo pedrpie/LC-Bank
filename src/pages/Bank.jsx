@@ -8,24 +8,23 @@ function Bank() {
         const salvarSaldo = localStorage.getItem("saldo");
         return salvarSaldo ? Number(salvarSaldo) : 0
     });
-    const [quantiaAdd, setQuantiaAdd] = useState("");
-    const [quantiaRet, setQuantiaRet] = useState("");
+    const [quantia, setQuantia] = useState("");
 
     useEffect(() => {
         localStorage.setItem("saldo", saldo);
     }, [saldo]);
 
     function adicionarQuantia(){
-        if (quantiaAdd > 0){
-            setSaldo(saldo + Number(quantiaAdd))
-            setQuantiaAdd("")
+        if (quantia > 0){
+            setSaldo(saldo + Number(quantia))
+            setQuantia("")
         } else{
             alert("Quantia inválida.")
         }
     }
 
     function retirarQuantia() {
-        const valor = Number(quantiaRet);
+        const valor = Number(quantia);
 
         if (valor <= 0) {
             alert("Quantia inválida.");
@@ -38,14 +37,14 @@ function Bank() {
         }
 
         setSaldo(saldo - valor)
-        setQuantiaRet("")
+        setQuantia("")
     }
 
     return(
         <>
             <Navbar/>
 
-            <div className="bg-white w-150 m-auto mt-50 p-5 text-center rounded-sm">
+            <div className="bg-white w-150 m-auto mt-40 p-5 text-center rounded-sm">
                 <h1 id="currency" className="text-5xl">Saldo: R${saldo.toFixed(2)}</h1>
 
                 <div>
@@ -53,33 +52,26 @@ function Bank() {
                     <input
                         id="bankInput"
                         type="number" 
-                        value={quantiaAdd}
-                        onChange={(e) => setQuantiaAdd(e.target.value)} 
+                        value={quantia}
+                        onChange={(e) => setQuantia(e.target.value)} 
                         placeholder="digite quantia aqui"
                     />
-                    <button
-                        id="bankButton"
-                        onClick={() => adicionarQuantia()} 
-                        className="bg-blue-500 text-white rounded-sm w-88 p-2 mb-2 mt-5 cursor-pointer hover:bg-blue-400">
-                        Adicionar
-                    </button>
-                </div>
 
-                <div>
-                    <p className="text-2xl mt-5 mb-2">Retirar dinheiro</p>
-                    <input
-                        id="bankInput"
-                        type="number" 
-                        value={quantiaRet} 
-                        onChange={(e) => setQuantiaRet(e.target.value)} 
-                        placeholder="digite quantia aqui" 
-                    />
-                    <button
-                        id="bankButton"
-                        onClick={() => retirarQuantia()} 
-                        className="bg-blue-500 text-white rounded-sm w-88 p-2 mb-2 mt-5 cursor-pointer hover:bg-blue-400">
-                        Retirar
-                    </button>
+                    <div className="flex gap-5">
+                        <button
+                            id="bankButton"
+                            onClick={() => adicionarQuantia()} 
+                            className="bg-blue-500 text-white rounded-sm w-88 p-2 mb-2 mt-5 cursor-pointer hover:bg-blue-400">
+                            Depositar
+                        </button>
+
+                        <button
+                            id="bankButton"
+                            onClick={() => retirarQuantia()} 
+                            className="bg-blue-500 text-white rounded-sm w-88 p-2 mb-2 mt-5 cursor-pointer hover:bg-blue-400">
+                            Resgatar
+                        </button>
+                    </div>
                 </div>
             </div>
 

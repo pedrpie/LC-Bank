@@ -28,6 +28,12 @@ function Login() {
         Entrar
       </button>
 
+      <button 
+        onClick={() => navigate("/bank")}
+        className="bg-gray-500 text-white rounded-sm w-105 p-2 mb-2 cursor-pointer hover:bg-gray-400">
+        Entrar sem Login
+      </button>
+
     </div>
   );
 }
