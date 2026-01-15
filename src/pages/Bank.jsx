@@ -44,7 +44,7 @@ function Bank() {
         <>
             <Navbar/>
 
-            <div className="bg-white w-150 m-auto mt-40 p-5 text-center rounded-sm">
+            <div id="bank" className="bg-white w-150 m-auto mt-40 p-5 text-center rounded-sm">
                 <h1 id="currency" className="text-5xl">Saldo: R${saldo.toFixed(2)}</h1>
 
                 <div>

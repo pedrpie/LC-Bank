@@ -30,3 +30,45 @@ input{
     padding: 5px;
     text-align: center;
 }
+
+@media(max-width: 1700px) {
+
+    /* navbar */
+    #navbar{
+        width: 380px;
+    }
+
+    #navbar #navbarTitle{
+        font-size: 25px;
+    }
+
+    #githubLink{
+        font-size: 18px;
+    }
+
+    /* login component */
+    #form{
+        width: 300px;
+    }
+
+    #btnLogin{
+        width: 250px;
+    }
+
+    #btnSemLogin{
+        width: 250px;
+    }
+
+    /* bank component */
+    #bank{
+        width: 320px;
+    }
+
+    #currency{
+        font-size: 40px;
+    }
+
+    #bankInput{
+        width: 280px;
+    }
+}

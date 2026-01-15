@@ -23,12 +23,14 @@ function Login() {
       <p className="mt-3">Faça login para ter acesso à sua conta</p>
 
       <button
+        id="btnLogin"
         onClick={loginGoogle}
         className="bg-blue-500 text-white rounded-sm w-105 p-2 mb-2 cursor-pointer hover:bg-blue-400">
         Entrar
       </button>
 
-      <button 
+      <button
+        id="btnSemLogin"
         onClick={() => navigate("/bank")}
         className="bg-gray-500 text-white rounded-sm w-105 p-2 mb-2 cursor-pointer hover:bg-gray-400">
         Entrar sem Login
