@@ -20,7 +20,7 @@ function Navbar() {
                 <h1 id='navbarTitle' className="text-4xl font-bold">LC Bank</h1>
 
                 <nav className="flex gap-5">
-                    <Link to="https://github.com/pedrpie" id='githubLink' target='_blank' className='text-2xl'>Github</Link>
+                    <Link to="https://github.com/pedrpie/LC-Bank" id='githubLink' target='_blank' className='text-2xl'>Github</Link>
                 </nav>
 
                 <h1 className='flex items-center gap-5 font-bold'>{user ? <Logout user={user} /> : <Link to='/'>Fazer login</Link>}</h1>

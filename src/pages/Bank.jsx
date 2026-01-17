@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import Amounts from "../components/Amounts";
 import Footer from "../components/Footer";
 
 function Bank() {
@@ -40,15 +41,19 @@ function Bank() {
         setQuantia("")
     }
 
+    function addValorViaButton(num) {
+        setQuantia((prev) => Number(prev) + num)
+    }
+
     return(
         <>
             <Navbar/>
 
             <div id="bank" className="bg-white w-150 m-auto mt-40 p-5 text-center rounded-sm">
-                <h1 id="currency" className="text-5xl">Saldo: R${saldo.toFixed(2)}</h1>
+                <h1 id="currency" className="text-5xl mb-5">Saldo: R${saldo.toFixed(2)}</h1>
 
                 <div>
-                    <p className="text-2xl mt-5 mb-2">Adicionar dinheiro</p>
+                    
                     <input
                         id="bankInput"
                         type="number" 
@@ -72,6 +77,9 @@ function Bank() {
                             Resgatar
                         </button>
                     </div>
+
+                    <Amounts onAdd={addValorViaButton}/>
+
                 </div>
             </div>
 

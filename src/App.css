@@ -1,6 +1,5 @@
 body{
     background-color: rgb(30, 30, 30);
-    
 }
 
 input{
@@ -70,5 +69,14 @@ input{
 
     #bankInput{
         width: 280px;
+    }
+
+    /* amounts component */
+    #Amounts{
+        gap: 5px;
+    }
+
+    #Amounts button{
+        font-size: 16px;
     }
 }
